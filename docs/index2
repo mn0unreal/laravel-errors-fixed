@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error: The stream or file permission</title>
+</head>
+<body>
+    <h1>Error: The stream or file permission</h1>
+    <p><strong>Reason:</strong> This error occurs due to permission issues on your Laravel project's storage directory.</p>
+    <h2>How to Fix:</h2>
+    <p>To fix this issue on a Linux-based system for a project folder named "laravel-app," follow these steps:</p>
+    <pre><code>sudo chcon -R -t httpd_sys_rw_content_t /var/www/html/laravel-app/storage</code></pre>
+    <p>This command will change the SELinux security context for the storage directory to allow Apache (httpd) to write to it.</p>
+    <p>After running this command, your Laravel application should be able to read and write to the storage directory without permission errors.</p>
+</body>
+</html>
