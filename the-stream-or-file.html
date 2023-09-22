@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error: The stream or file</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .error-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Error: The stream or file</h1>
+        <p><strong>Reason:</strong> Permission issue</p>
+        <p><strong>To Fix:</strong> For Linux</p>
+        <pre>
+sudo chcon -R -t httpd_sys_rw_content_t /var/www/html/laravel-app/storage
+        </pre>
+        <p>Run the above command in your terminal to set the appropriate SELinux context for the storage folder in your Laravel project.</p>
+    </div>
+</body>
+</html>
